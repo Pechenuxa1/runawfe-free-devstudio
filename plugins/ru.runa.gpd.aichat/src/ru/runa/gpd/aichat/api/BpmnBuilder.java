@@ -156,7 +156,7 @@ public class BpmnBuilder implements IBpmnBuilder {
         String initializerType = params.get("initializer_type").asText();
         String initializer = params.get("initializer").asText();
         String roleSource = params.has("role_source") ? params.get("role_source").asText() : null;
-        final List<String> flowNodeRefs = new ObjectMapper().convertValue(params.get("flowNodeRefs"), new TypeReference<>() {});
+        final List<String> flowNodeRefs = new ObjectMapper().convertValue(params.get("flowNodeRefs"), new TypeReference<List<String>>() {});
 
         List<String> flowNodeRefIds = currentProcessContext.elements.entrySet()
                 .stream()
